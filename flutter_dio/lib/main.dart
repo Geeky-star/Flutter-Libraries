@@ -29,11 +29,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> getData() async {
     Response response;
     var dio = Dio();
-    response = await dio.get('https://jsonplaceholder.typicode.com/users');
+    // response = await dio.get('https://jsonplaceholder.typicode.com/users');
     //print(response.data.toString());
-    // response = await dio.get('https://jsonplaceholder.typicode.com/users', queryParameters: {
-    // 'id': 11,
-    //});
+    response = await dio
+        .get('https://jsonplaceholder.typicode.com/users', queryParameters: {
+      'id': 11,
+    });
     print(response.data.toString());
   }
 
