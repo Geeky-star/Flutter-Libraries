@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:video_thumbnail/video_thumbnail.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
+import 'package:tuple/tuple.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,8 +22,27 @@ class _MyAppState extends State<MyApp> {
   String? _tempDir;
   String? filePath;
 
+  getData() {
+    const t = Tuple2<String, int>('geeksforgeeks', 10);
+
+    print(t.item1);
+    print(t.item2);
+
+    const t2 = Tuple3('geeksforgeeks', 'tutorial', 10);
+    print(t2.item1);
+    print(t2.withItem3(20));
+
+    const t3 = Tuple7(1, 2, 3, 4, 5, 6, 7);
+    print(t3.toList());
+
+    List items = [1, 2, 3, 4, 5, 6];
+    var t4 = Tuple6.fromList(items);
+    print(t4);
+  }
+
   @override
   void initState() {
+    getData();
     super.initState();
     getTemporaryDirectory().then((d) => _tempDir = d.path);
   }
@@ -63,6 +83,12 @@ class _MyAppState extends State<MyApp> {
                 },
                 child: Text('Click'),
               ),
+              ElevatedButton(
+                child: Text("get"),
+                onPressed: () {
+                  getData();
+                },
+              )
             ],
           )),
     );
