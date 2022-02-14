@@ -28,15 +28,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("GeeksForGeeks"),
-      ),
+      appBar: AppBar(title: const Text("GeeksForGeeks"), centerTitle: true),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            FadeInLeft(duration: Duration(seconds: 4), child: NewContainer()),
-            BounceInUp(child: NewContainer(), duration: Duration(seconds: 4)),
+            FadeOutLeft(duration: Duration(seconds: 11), child: NewContainer()),
+            BounceInUp(child: NewContainer(), duration: Duration(seconds: 11)),
             Swing(
               child: NewContainer(),
               infinite: true,
@@ -45,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Dance(child: NewContainer(), infinite: true),
             Roulette(child: NewContainer(), infinite: true),
             Spin(child: NewContainer(), infinite: true),
-            SlideInLeft(duration: Duration(seconds: 4), child: NewContainer())
+            SlideInLeft(duration: Duration(seconds: 11), child: NewContainer())
           ],
         ),
       ),
