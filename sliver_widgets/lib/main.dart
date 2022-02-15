@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("GeeksForGeeks"),
+          title: Text("Sliver tools package"),
           centerTitle: true,
         ),
         body: CustomScrollView(slivers: [
